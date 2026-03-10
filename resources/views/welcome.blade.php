@@ -14,10 +14,10 @@
                 <div class="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-slate-900/40 to-slate-900/80"></div>
                 <div class="absolute inset-0 flex items-center justify-center">
                     <div class="text-center px-6 max-w-7xl mx-auto">
-                        <span class="inline-block px-4 py-1.5 mb-6 glass text-white rounded-full text-sm font-semibold tracking-wider uppercase animate-pulse">
+                        <span class="inline-block px-4 py-1.5 mb-6 glass text-white rounded-full text-xs sm:text-sm font-semibold tracking-wider uppercase animate-pulse">
                             Redefining Modern Luxury
                         </span>
-                        <h1 class="text-5xl md:text-8xl font-black text-white mb-6 leading-[1.05]">
+                        <h1 class="text-4xl sm:text-5xl md:text-8xl font-black text-white mb-6 leading-[1.05]">
                             Find Your <span class="text-primary italic">Perfect</span> <br>Living Space
                         </h1>
                         <p class="text-xl text-slate-200 mb-12 max-w-2xl mx-auto font-light">
@@ -32,10 +32,10 @@
                 <div class="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-slate-900/40 to-slate-900/80"></div>
                 <div class="absolute inset-0 flex items-center justify-center">
                     <div class="text-center px-6 max-w-7xl mx-auto">
-                        <span class="inline-block px-4 py-1.5 mb-6 glass text-white rounded-full text-sm font-semibold tracking-wider uppercase">
+                        <span class="inline-block px-4 py-1.5 mb-6 glass text-white rounded-full text-xs sm:text-sm font-semibold tracking-wider uppercase">
                             Urban Elite Living
                         </span>
-                        <h1 class="text-5xl md:text-8xl font-black text-white mb-6 leading-[1.05]">
+                        <h1 class="text-4xl sm:text-5xl md:text-8xl font-black text-white mb-6 leading-[1.05]">
                             Experience <span class="text-primary">Elegance</span> <br>At Every Turn
                         </h1>
                         <p class="text-xl text-slate-200 mb-12 max-w-2xl mx-auto font-light">
@@ -50,10 +50,10 @@
                 <div class="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-slate-900/40 to-slate-900/80"></div>
                 <div class="absolute inset-0 flex items-center justify-center">
                     <div class="text-center px-6 max-w-7xl mx-auto">
-                        <span class="inline-block px-4 py-1.5 mb-6 glass text-white rounded-full text-sm font-semibold tracking-wider uppercase">
+                        <span class="inline-block px-4 py-1.5 mb-6 glass text-white rounded-full text-xs sm:text-sm font-semibold tracking-wider uppercase">
                             Serene Coastal Retreats
                         </span>
-                        <h1 class="text-5xl md:text-8xl font-black text-white mb-6 leading-[1.05]">
+                        <h1 class="text-4xl sm:text-5xl md:text-8xl font-black text-white mb-6 leading-[1.05]">
                             Your <span class="text-primary italic">Exclusive</span> <br>Island Paradise
                         </h1>
                         <p class="text-xl text-slate-200 mb-12 max-w-2xl mx-auto font-light">
@@ -227,7 +227,7 @@
 
 
 <!-- Featured Properties -->
-<section class="py-24 bg-slate-50 relative">
+<section class="py-24 bg-slate-50 relative overflow-hidden">
     <!-- Decorative element -->
     <div class="absolute top-0 right-0 w-1/4 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none"></div>
     
@@ -429,7 +429,7 @@
 </section>
 
 <!-- Market Insights -->
-<section class="py-24 bg-white relative">
+<section class="py-24 bg-white relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-6">
         <div class="flex flex-col md:flex-row items-end justify-between mb-16 gap-6">
             <div class="max-w-xl" data-aos="fade-right">

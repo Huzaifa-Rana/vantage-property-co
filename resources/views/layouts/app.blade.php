@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="overflow-x-hidden">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -63,34 +63,56 @@
         }
     </style>
 </head>
-<body class="antialiased">
-    <div class="min-h-screen flex flex-col">
+<body class="antialiased overflow-x-hidden w-full max-w-[100vw]">
+    <div class="min-h-screen flex flex-col overflow-x-hidden w-full max-w-[100vw]">
         <!-- Navigation -->
-        <nav class="fixed w-full z-50 transition-all duration-300 px-6 py-4" id="main-nav">
-            <div class="max-w-7xl mx-auto flex items-center justify-between glass rounded-full px-8 py-3">
-                <a href="{{ route('home') }}" class="flex items-center gap-2 group">
-                    <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white shadow-lg group-hover:rotate-12 transition-transform">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <nav class="fixed w-full z-50 transition-all duration-300 px-4 md:px-6 py-4" id="main-nav">
+            <div class="max-w-7xl mx-auto flex items-center justify-between glass rounded-full px-4 sm:px-5 md:px-8 py-2.5 sm:py-3 box-border overflow-hidden">
+                <a href="{{ route('home') }}" class="flex items-center gap-1.5 sm:gap-2 group shrink min-w-0">
+                    <div class="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 shrink-0 bg-primary rounded-xl flex items-center justify-center text-white shadow-lg group-hover:rotate-12 transition-transform">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                         </svg>
                     </div>
-                    <span class="text-xl font-bold tracking-tight text-slate-800">Vantage<span class="text-primary">Properties</span></span>
+                    <span class="text-[15px] sm:text-lg md:text-xl font-bold tracking-tight text-slate-800 truncate">Vantage<span class="text-primary">Properties</span></span>
                 </a>
 
                 <div class="hidden md:flex items-center gap-8 font-medium text-slate-600">
                     <a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'text-primary' : '' }} hover:text-primary transition-colors">Home</a>
                     <a href="{{ route('properties.index') }}" class="{{ request()->routeIs('properties.*') ? 'text-primary' : '' }} hover:text-primary transition-colors">Find a Home</a>
                     <a href="{{ route('agents') }}" class="{{ request()->routeIs('agents') ? 'text-primary' : '' }} hover:text-primary transition-colors">Agents</a>
-                    <a href="{{ route('about') }}" class="{{ request()->routeIs('about') ? 'text-primary' : '' }} hover:text-primary transition-colors">About</a>
+                    <a href="{{ route('about') }}" class="{{ request()->routeIs('about') ? 'text-primary' : '' }} hover:text-primary transition-colors">About Us</a>
                 </div>
 
-                <div class="flex items-center gap-4">
+                <div class="flex items-center gap-2 md:gap-4">
                     <a href="{{ route('properties.index') }}" class="hidden lg:block bg-slate-900 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-slate-800 transition-all shadow-lg hover:-translate-y-0.5">
                         List Your Property
                     </a>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" class="md:hidden flex items-center justify-center p-2 text-slate-600 hover:text-primary transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
                 </div>
             </div>
         </nav>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 bg-white z-50 transform translate-x-full transition-transform duration-300 flex flex-col pt-24 px-8 hidden md:hidden">
+            <button id="close-menu-btn" class="absolute top-6 right-8 p-2 text-slate-600 hover:text-primary bg-slate-100 rounded-full shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <div class="flex flex-col gap-8 text-3xl font-black text-slate-800 mt-10">
+                <a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'text-primary' : '' }} hover:text-primary transition-colors">Home</a>
+                <a href="{{ route('properties.index') }}" class="{{ request()->routeIs('properties.*') ? 'text-primary' : '' }} hover:text-primary transition-colors">Find a Home</a>
+                <a href="{{ route('agents') }}" class="{{ request()->routeIs('agents') ? 'text-primary' : '' }} hover:text-primary transition-colors">Agents</a>
+                <a href="{{ route('about') }}" class="{{ request()->routeIs('about') ? 'text-primary' : '' }} hover:text-primary transition-colors">About Us</a>
+            </div>
+        </div>
 
         <!-- Main Content -->
         <main class="flex-grow pt-24">
@@ -116,9 +138,10 @@
                 <div>
                     <h4 class="text-white font-bold mb-6 italic">Quick Links</h4>
                     <ul class="space-y-4">
-                        <li><a href="#" class="hover:text-white transition-colors">Properties</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Our Process</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Agent Login</a></li>
+                        <li><a href="{{ route('home') }}" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="{{ route('properties.index') }}" class="hover:text-white transition-colors">Find a Home</a></li>
+                        <li><a href="{{ route('agents') }}" class="hover:text-white transition-colors">Agents</a></li>
+                        <li><a href="{{ route('about') }}" class="hover:text-white transition-colors">About Us</a></li>
                     </ul>
                 </div>
                 <div>
@@ -163,6 +186,28 @@
                 nav.classList.add('py-4');
             }
         });
+
+        // Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const closeBtn = document.getElementById('close-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileBtn && closeBtn && mobileMenu) {
+            mobileBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('hidden');
+                // Small delay to allow display:block to apply before animating transform
+                setTimeout(() => {
+                    mobileMenu.classList.remove('translate-x-full');
+                }, 10);
+            });
+
+            closeBtn.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                }, 300); // match transition duration
+            });
+        }
     </script>
 </body>
 </html>
